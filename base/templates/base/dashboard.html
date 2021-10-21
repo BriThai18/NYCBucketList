@@ -1,0 +1,57 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+{% include 'base/status.html' %}
+
+<br>
+
+<div class="row">
+    <div class="col-md-5">
+        <h5>CUSTOMERS</h5>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary btn-sm btn-block" href="">Create Customer</a>
+            <table class="table table-sm">
+                <tr>
+                    <th></th>
+                    <th>Customer</th>
+                    <th>Contact</th>
+                </tr>
+                {% for customer in customers %}
+                    <tr>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'customer' customer.id %}">View</a></td>
+                        <td>{{customer.name}}</td>
+                        <td>{{customer.phone}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <h5>EVENTS</h5>
+        <hr>
+        <div class="card card-body">
+            <a class="btn btn-primary btn-sm btn-block" href="{% url 'createEvent' %}">Create Events</a>
+            <table class="table table-sm">
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Date Added</th>
+                </tr>
+                {% for event in events %}
+                    <tr>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'updateEvent' event.id %}">View</a></td>
+                        <td> <a class="btn btn-sm btn-danger" href="{% url 'deleteEvent' event.id %}">Remove</a></td>
+                        <td>{{event.title}}</td>
+                        <td>{{event.date_created}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+body{
+    background: url('../images/luca-bravo-TaCk3NspYe0-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.cart{
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    min-height: 800px;
+}
+
+.cart-content h3{
+    padding-bottom: 10px;
+}
+
+.main-section{
+    background: white;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 15px;
+    opacity: .9;
+}
+
+.btn{
+    font-size: 19px;
+    padding-bottom: 7px 14px;
+    margin-bottom: 10px;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+  
+.table-wrapper-scroll-y {
+    display: block;
+}
+  

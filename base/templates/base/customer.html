@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<br>
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Customer: {{customer.name}}</h5>
+            <hr>
+            <a class="btn btn-outline-info btn-sm btn-block" href="{% url 'updateCustomer' customer.id %}">Update Customer</a>
+        </div>
+    </div>
+
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Contact Information</h5>
+            <hr>
+            <p>Email: {{customer.email}}</p>
+            <p>Phone: {{customer.phone}}</p>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th>Event</th>
+                        <th>Location</th>
+                        <th>Activity</th> 
+                    </tr>
+                    {% for itiner in itinerary %}
+                        <tr>
+                            <td>{{itiner.event.title}}</td>
+                            <td>{{itiner.event.location}}</td>
+                            <td>{{itiner.event.activity}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
